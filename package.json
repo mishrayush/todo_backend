@@ -1,23 +1,44 @@
 {
-  "name": "todo-backend",
+  "name": "times_user_tracking",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
+  "private": true,
+  "engines": {
+    "node": ">=20.16.0",
+    "npm": ">=8.11.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "NODE_ENV=development nodemon server.js"
+    "local:build": "NODE_ENV=local webpack --config webpack.config.js",
+    "local:start": "NODE_ENV=local node dist/app.js",
+    "dev:build": "NODE_ENV=development webpack --config webpack.config.js",
+    "dev:start": "NODE_ENV=development node dist/app.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.js",
+    "start": "NODE_ENV=production node dist/app.js",
+    "dev": "NODE_ENV=local nodemon dist/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Times Now",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "mongoose": "^8.18.3"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.10.0",
+    "morgan": "^1.10.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@babel/core": "^7.26.8",
+    "@babel/preset-env": "^7.26.8",
+    "babel-loader": "^9.2.1",
+    "nodemon": "^3.1.9"
   }
 }
