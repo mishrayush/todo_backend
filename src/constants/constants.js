@@ -1,6 +1,7 @@
 module.exports = {
-    WHITELISTDOMAIN : [
-        'https://localhost:5000', 
+    WHITELISTDOMAIN: [
+        'https://localhost:5000',
+        'https://todo-frontend-lac-three.vercel.app'
     ],
 
 }
